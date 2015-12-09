@@ -1,0 +1,21 @@
+<h1><%= @meetup.name %></h1>
+<p>Creator: <%= @meetup.creator%></p>
+<p>Location: <%= @meetup.location%></p>
+<p>Description: <%= @meetup.description %></p>
+<br>
+<h1>Attendees</h1>
+<br>
+
+<ul>
+  <% @member_ids = [] %>
+  <% @members.each do |member| %>
+  <li><%= member.username %> <%= member.avatar_url%></l1>
+    <% @member_ids << member.id %>
+  <% end %>
+</ul> -->
+
+<% unless @member_ids.include?(session[:user_id]) %>
+  <form action="/meetups/<%= @meetup.id %>" method="post">
+    <input type="submit" value="Join!">
+  </form>
+<% end %>  

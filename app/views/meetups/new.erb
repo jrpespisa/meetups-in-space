@@ -1,0 +1,17 @@
+<h1>Please enter meetup information below:</h1>
+
+<form action="/meetups/new" method="post">
+  <ul>
+    <label for="name">Name:</label>
+    <input class="fill-in" type="text" id="name" name="name" value="<%= @name %>">
+  </ul>
+  <ul>
+    <label for="description">Description:</label>
+    <input class="fill-in" type="text" id="description" name="description" value="<%= @description %>">
+  </ul>
+  <ul>
+    <label for="location">Location:</label>
+    <input class="fill-in" type="text" id="location" name="location" value="<%= @location %>">
+  </ul>
+  <input type="submit" value="Create">
+</form>
